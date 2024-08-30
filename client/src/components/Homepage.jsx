@@ -37,6 +37,9 @@ const Homepage = () => {
       )
     ) {
       errors.password = "Password is weak";
+      alert(
+        "use at least 1 uppercase, 1 lowercase, 1 number and 1 special character"
+      );
     } else if (values.password.length < 6) {
       errors.password = "Password must be at least 6 characters";
     } else if (values.password.length > 20) {
@@ -44,7 +47,7 @@ const Homepage = () => {
     }
     if (values.password !== values.confirmPassword) {
       errors.confirmPassword = "Passwords do not match";
-    } else if (!values.confirmPassword) {
+    } else if (!values.confirmPassword) { 
       errors.confirmPassword = "Confirm Password is required";
     }
     return errors;
@@ -77,7 +80,6 @@ const Homepage = () => {
   }, [activeLeft, activeRight]);
 
   const submitData = async (e) => {
-    setIsLoading(true);
     e.preventDefault();
     const errors = validate(formData);
     setErrors(errors);
@@ -85,7 +87,7 @@ const Homepage = () => {
       console.log(errors);
       return;
     }
-
+    setIsLoading(true);
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/api/auth/register`,

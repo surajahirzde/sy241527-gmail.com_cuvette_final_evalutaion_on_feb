@@ -20,22 +20,24 @@ const Game = ({ func, quiz, setScore }) => {
     setSelectedOption(null); // Reset selected option when question changes
   }, [currentQuestion, quiz?.questions]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setTimer((prevTimer) => {
-        if (prevTimer > 0 && quiz?.questions[currentQuestion]?.timer) {
-          return prevTimer - 1;
-        } else {
-          clearInterval(interval);
-          quiz?.quizType !== "Poll Type" && handleNextQuestion();
-          return 0;
+        if (quiz?.questions[currentQuestion]?.timer) {
+          if (prevTimer > 0) {
+            return prevTimer - 1;
+          } else {
+            clearInterval(interval);
+            quiz?.quizType !== "Poll Type" && handleNextQuestion();
+            return null;
+          }
         }
       });
     }, 1000);
     return () => {
       clearInterval(interval);
     };
-  }, [timer]);
+  }, [timer, currentQuestion]);
 
   const handleNextQuestion = async () => {
     if (currentQuestion < quiz?.questions?.length - 1) {
@@ -146,7 +148,9 @@ const Game = ({ func, quiz, setScore }) => {
             quiz?.questions?.length
           }`}</span>
           <span className="timer">
-            {quiz?.quizType !== "Poll Type" && timer !== null
+            {quiz?.quizType !== "Poll Type" &&
+            timer !== null &&
+            quiz?.questions[currentQuestion]?.timer
               ? `00:${timer > 9 ? timer : `0${timer}`}s`
               : null}
           </span>
