@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles/Game.css";
 import PropTypes from "prop-types";
 import Loader from "../helper/Loader";
@@ -45,7 +45,8 @@ const Game = ({ func, quiz, setScore }) => {
     } else {
       func("ended");
     }
-    quiz?.questions?.length > 1 && (await addAttempQuestionApi());
+    currentQuestion < quiz?.questions?.length - 1 &&
+      (await addAttempQuestionApi());
   };
 
   const handleOptionClick = (index) => {

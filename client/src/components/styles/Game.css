@@ -15,7 +15,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
-  font-size: 40px;
+  font-size: clamp(1.2rem, 3vw, 2.5rem);
   font-weight: 700;
 }
 .game-header p .timer {
@@ -28,7 +28,7 @@
   margin: auto;
 }
 .game-body h2 {
-  font-size: 40px;
+  font-size: clamp(1.2rem, 3vw, 2.5rem);
   font-weight: 700;
 }
 .game-body .options {
@@ -52,7 +52,7 @@
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.149);
-  font-size: 35px;
+  font-size: clamp(1.1rem, 3vw, 2.2rem);
   font-weight: 500;
   color: #000;
   background-color: var(--pure-white);
@@ -82,7 +82,6 @@
 .game-body .options .option.text.image-option img {
   max-width: 150px;
   width: 100%;
-
 }
 .game-footer {
   max-width: 320px;
@@ -107,6 +106,7 @@
 
 @media screen and (max-width: 765px) {
   .game {
+    min-height: 100vh;
     border-radius: 0;
   }
   .game-body h2 {
