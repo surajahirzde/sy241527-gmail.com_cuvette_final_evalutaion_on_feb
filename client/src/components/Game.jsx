@@ -45,7 +45,7 @@ const Game = ({ func, quiz, setScore }) => {
     } else {
       func("ended");
     }
-    await addAttempQuestionApi();
+    quiz?.questions?.length > 1 && (await addAttempQuestionApi());
   };
 
   const handleOptionClick = (index) => {
