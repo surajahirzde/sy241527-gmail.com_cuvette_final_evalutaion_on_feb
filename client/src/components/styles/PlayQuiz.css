@@ -1,0 +1,15 @@
+.play-quiz {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: #041325;
+}
+.play-quiz > button {
+  background-color: #60b84b;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+}

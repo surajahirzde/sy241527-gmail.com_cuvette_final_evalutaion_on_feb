@@ -1,0 +1,28 @@
+.notification {
+  position: fixed;
+  top: 5rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  max-width: 257px;
+  width: 100%;
+  font-size: 12px;
+  background-color: var(--pure-white);
+}
+.notification .notification-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 85%;
+  padding: 0.5rem;
+  padding-right: 1.5rem;
+  position: relative;
+  box-shadow:inset 0 -2px 0 0 #60b84b;
+}
+.notification .notification-info .close {
+  position: fixed;
+  top: 5.1rem;
+  right: 1.5rem;
+  font-size: 0.7em;
+  cursor: pointer;
+}

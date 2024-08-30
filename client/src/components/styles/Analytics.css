@@ -1,0 +1,71 @@
+.analytics {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.analytics h1 {
+  font-size: clamp(1.5rem, 5vw, 4.1rem);
+  color: #5076ff;
+  margin: 3.8rem auto;
+}
+.analytics .tableContainer {
+  width: 100%;
+  max-width: 929px;
+  overflow: auto;
+}
+.analytics .tableContainer table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.analytics .tableContainer table thead {
+  color: white;
+  position: sticky;
+  top: 0;
+}
+.analytics .tableContainer table thead tr th:nth-child(1),
+.analytics .tableContainer table tbody tr td:nth-child(1) {
+  border-radius: 50px 0 0 50px;
+}
+.analytics .tableContainer table thead tr th:nth-child(6),
+.analytics .tableContainer table tbody tr td:nth-child(6) {
+  border-radius: 0 50px 50px 0;
+}
+.analytics .tableContainer table thead tr th {
+  background-color: #5076ff;
+  padding: 0.3rem;
+}
+
+.analytics .tableContainer table tbody tr td {
+  padding: 0.4rem 0;
+}
+.analytics .tableContainer table tbody tr:nth-child(even) td {
+  background-color: #b3c4ff;
+}
+.analytics .tableContainer table tbody tr td:last-child {
+  font-size: 13px;
+  text-align: left;
+}
+.analytics .tableContainer table tbody tr td:nth-child(5) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.analytics .tableContainer table tbody tr td:nth-child(5) button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 765px) {
+  .analytics{
+    width: 100vw;
+  }
+  .analytics h1 {
+    margin: 0 auto;
+  }
+}

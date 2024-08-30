@@ -1,0 +1,98 @@
+.homepage {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+.homepage .container {
+  max-width: 1066px;
+  background-color: var(--pure-white);
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: var(--text-shadow);
+  border-radius: 15px;
+}
+.homepage .container h1 {
+  font-size: clamp(3rem, 10vw, 6.2rem);
+  line-height: 1;
+  font-family: "Jomhuria", sans-serif;
+}
+
+.homepage .container .btnContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 417px;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+/*  form styling  */
+
+.homepage .container .formContainer {
+  max-width: 606px;
+  width: 100%;
+  margin: 2.5rem auto;
+  margin-bottom: 0;
+}
+.homepage .container .formContainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.homepage .container .formContainer form .input-group {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  position: relative;
+}
+.homepage .container .formContainer form .input-group label {
+  text-align: right;
+  font-weight: 600;
+}
+
+.homepage .container .formContainer form .input-group input {
+  background-color: var(--gray-white);
+  padding: 0.5rem;
+  border-radius: 10px 10px 0 0;
+}
+.homepage .container .formContainer form .input-group .error {
+  border: 0 0 0 1px rgb(214, 0, 0);
+  color: rgb(214, 0, 0);
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: calc(406px - 2rem);
+  width: 100%;
+  background-color: var(--gray-white);
+  padding: 0.3rem;
+  text-align: left;
+  text-transform: capitalize;
+  border-radius: 10px 10px 0 0;
+}
+.homepage .container .formContainer form .btn {
+  background: #a9bcff;
+  max-width: 267px;
+  width: 100%;
+  margin: 1.5rem auto;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .homepage .container .btnContainer{
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .homepage .container .formContainer form .input-group {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+  .homepage .container .formContainer form .input-group label {
+    text-align: left;
+  }
+  .homepage .container .formContainer form .btn{
+    margin-top: 0;
+  }
+}

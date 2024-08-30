@@ -1,0 +1,10 @@
+.controller .container {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 192px 1fr;
+}
+@media screen and (max-width: 600px) {
+  .controller .container {
+    grid-template-columns: 1fr;
+  }
+}

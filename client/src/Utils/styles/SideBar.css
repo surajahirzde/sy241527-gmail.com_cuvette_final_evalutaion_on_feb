@@ -1,0 +1,83 @@
+aside {
+  height: 100vh;
+  width: 192px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.251);
+}
+aside h2 {
+  font-family: "Jomhuria", sans-serif;
+  font-size: clamp(2rem, 4vw, 4.6rem);
+  line-height: 1;
+}
+aside .navigateLinks {
+  padding: 0.5rem;
+}
+aside .navigateLinks ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+aside .navigateLinks ul li {
+  width: 100%;
+}
+aside .navigateLinks ul li a,
+aside .navigateLinks ul li button {
+  text-decoration: none;
+  color: var(--black);
+  padding: 0.1rem 1.2rem;
+  display: block;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 3vw, 1.25rem);
+  white-space: nowrap;
+  cursor: pointer;
+}
+aside .navigateLinks ul li a.active {
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.122);
+}
+
+aside .logoutBtn {
+  position: relative;
+  font-size: 20px;
+}
+aside .logoutBtn::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 1px;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--textColor);
+}
+
+@media screen and (max-width: 600px) {
+  aside {
+    flex-direction: row;
+    width: 100vw;
+    height: auto;
+    padding: 0.5rem;
+    overflow: auto;
+    min-height: unset;
+    background-color: var(--pure-white);
+  }
+  aside h2 {
+    position: sticky;
+    left: 0;
+    background-color: var(--pure-white);
+  }
+  aside .navigateLinks ul {
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+  }
+}

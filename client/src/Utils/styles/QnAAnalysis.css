@@ -1,0 +1,104 @@
+.QnAAnalysis {
+  padding: 1rem;
+  width: 100%;
+  margin: auto;
+}
+.QnAAnalysis .qnaHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 3rem;
+  margin-block: 3rem;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  background-color: var(--off-white);
+}
+.QnAAnalysis .qnaHeader h1 {
+  font-size: clamp(1.2rem, 3vw, 2.8rem);
+  color: #5076ff;
+}
+.QnAAnalysis .qnaHeader p {
+  display: flex;
+  font-weight: 600;
+  flex-direction: column;
+  color: #ff5d01;
+  font-size: 15px;
+}
+
+.QnAAnalysis .questionsContainer {
+  max-width: 1000px;
+  width: 100%;
+  margin-left: 3rem;
+}
+
+.QnAAnalysis .questionsContainer .questionBox {
+  border-bottom: 2px solid #d7d7d7;
+}
+.QnAAnalysis .questionsContainer .question {
+  font-size: clamp(1.1rem, 3vw, 1.8rem);
+  font-weight: 500;
+  margin-top: 2rem;
+}
+
+.QnAAnalysis .questionsContainer .analysisContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-block: 2rem;
+}
+
+.QnAAnalysis .questionsContainer .analysisContainer .box {
+  display: grid;
+  place-items: center;
+  background-color: var(--pure-white);
+  border-radius: 5px;
+  padding: 0.78rem;
+}
+.QnAAnalysis .questionsContainer .box h3 {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.QnAAnalysis .questionsContainer .box p {
+  font-size: clamp(0.7rem, 3vw, 0.9rem);
+  font-weight: 600;
+}
+
+/* if question type of poll */
+
+.QnAAnalysis .questionsContainer .pollContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 180px));
+  gap: 1rem;
+  margin-block: 2rem;
+}
+.QnAAnalysis .questionsContainer .pollContainer .box {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background-color: var(--pure-white);
+  border-radius: 5px;
+  padding: 1rem;
+}
+.QnAAnalysis .questionsContainer .pollContainer .box p {
+  max-width: 120px;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.QnAAnalysis img {
+  width: 100px;
+  height: 100%;
+  border-radius: 5px;
+}
+@media screen and (max-width: 600px) {
+  .QnAAnalysis {
+    width: 100vw;
+    overflow: hidden;
+  }
+  .QnAAnalysis .qnaHeader,
+  .QnAAnalysis .questionsContainer {
+    margin-left: 0;
+  }
+}
